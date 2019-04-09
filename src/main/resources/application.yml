@@ -1,9 +1,10 @@
 management:
   server:
     port: 8080
-  endpoint:
+  endpoints:
     web:
       exposure:
         include: "*"
+  endpoint:
     health:
       show-details: always
