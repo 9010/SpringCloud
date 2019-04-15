@@ -30,9 +30,9 @@ public class HelloController {
     @RequestMapping(value = "hello", method = RequestMethod.GET)
     public String index(){
         //ServiceInstance instance = client.getLocalServiceInstance();
-        ServiceInstance instance = serviceInstance();
-        logger.info("/hello, host: " + instance.getHost() + ", service_id: " +
-                instance.getServiceId());
+//        ServiceInstance instance = serviceInstance();
+//        logger.info("/hello, host: " + instance.getHost() + ", service_id: " +
+//                instance.getServiceId());
         return "Hello world";
     }
 
@@ -41,7 +41,7 @@ public class HelloController {
 
         if (list != null && list.size() > 0){
             for (ServiceInstance itm : list){
-                if (itm.getPort() == 8080){
+                if (itm.getPort() == 50081){
                     return itm;
                 }
             }
