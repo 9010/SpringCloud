@@ -13,6 +13,12 @@ public class ConsumerController {
 
     @RequestMapping(value = "/ribbon-consumer", method = RequestMethod.GET)
     public String helloConsumer(){
+        //restTemplate.getForObject(url, Stirng.class);
+        //restTemplate.postForEntity(url, class, String.class);
+        //restTemplate.postForObject(url, class, String.class);
+        //restTemplate.postForLocation(url, class, String.class);
+        //restTemplate.put(url, class, String);
+        //restTemplate.delete(url);
         return restTemplate.getForEntity("http://HELLO-SERVICE/hello",
                 String.class).getBody();
     }
