@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
+import java.util.Random;
 
 
 /**
@@ -27,10 +28,16 @@ public class HelloController {
     @Autowired
     Registration registration;
 
-    @RequestMapping(value = "hello", method = RequestMethod.GET)
-    public String index(){
+    @RequestMapping(value = "/hello", method = RequestMethod.GET)
+    public String hello() throws  Exception{
         //ServiceInstance instance = client.getLocalServiceInstance();
         ServiceInstance instance = serviceInstance();
+
+        //模拟服务阻塞
+        int sleepTime = new Random().nextInt(3000);
+        logger.info("SleepTime: " + sleepTime);
+        Thread.sleep(sleepTime);
+
         logger.info("/hello, host: " + instance.getHost() + ", service_id: " +
                 instance.getServiceId());
         return "Hello world";
