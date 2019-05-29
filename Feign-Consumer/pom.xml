@@ -44,6 +44,15 @@
 			<artifactId>spring-cloud-starter-feign</artifactId>
 			<version>1.4.6.RELEASE</version>
 		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-actuator</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>cn.com.self.api</groupId>
+			<artifactId>hello-service-api</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
 	</dependencies>
 
 	<dependencyManagement>
